@@ -22,8 +22,8 @@ describe "LoginLogouts" do
     click_button "Einloggen"
     current_path.should eq(root_path)
     page.should have_content("Erfolgreich eingeloggt!")
-    click_link "logout"
-    current_path.shoud eq(login_path)
+    click_link "Logout"
+    current_path.should eq(login_path)
 	end
 
 	
