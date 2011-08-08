@@ -8,12 +8,13 @@ class SessionsController < ApplicationController
 	    session[:user_id] = user.id  
 	    redirect_to root_url, :notice => "Erfolgreich eingeloggt!"  
 	  else  
-	    redirect_to login_path, :alert => "Falsches Passwort oder Email!"  
+	  	flash[:alert] = "Falsche email oder passwort!"  
+	    render "new"
 	  end  
 	end 
 
 	def destroy  
 	  session[:user_id] = nil  
-	  redirect_to login_path, :notice => "Logged out!"  
+	  redirect_to login_path, :notice => "Erfolgreich ausgeloggt!"  
 	end
 end

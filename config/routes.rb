@@ -2,9 +2,11 @@ Webphusion::Application.routes.draw do
 	
 	resources :users
 	resources :sessions
+	resources :dashboards
 	match '/register' => 'users#new'
 	match '/login' => 'sessions#new'
-	root :to => 'sessions#new'
+	match '/logout' => 'sessions#destroy'
+	root :to => 'dashboards#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
