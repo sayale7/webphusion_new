@@ -1,8 +1,11 @@
-<h1>Sign Up</h1>  
+<h1><%= t 'user.register' %></h1>  
   
-<%= simple_form_for @user do |f| %>  
+<%= simple_form_for @user do |f| %> 
+		<%= f.error_notification %>
+	  <%= f.input :account_owner, :as => :hidden, :input_html => { :value => true }  %>
+	  <%= f.input :admin, :as => :hidden, :input_html => { :value => true } %>
     <%= f.input :email %>  
     <%= f.input :password %>
     <%= f.input :password_confirmation %>  
-		<%= f.submit 'Registrieren' %>
+		<%= f.submit t('user.register') %>
 <% end %>

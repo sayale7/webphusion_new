@@ -1,0 +1,10 @@
+<h1><%= t('website.new') %></h1>
+
+<div class="actions">
+	<%= simple_form_for @website do |f| %> 
+		<%= f.error_notification %> 
+	  <%= f.input :account_id, :as => :hidden, :input_html => { :value => current_user.account.id }  %>
+    <%= f.input :name %>  
+		<%= f.submit t('website.create') %>
+	<% end %>
+</div>

@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe "RegisterAndDeleteUsers" do
-  it "signs up" do
+  it "registers" do
     visit register_path
 		user = Factory(:user)
 		fill_in "user_email", :with => user.email

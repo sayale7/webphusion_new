@@ -6,15 +6,15 @@ class SessionsController < ApplicationController
 	  user = User.where(:email => params[:email]).first 
 	  if user && user.authenticate(params[:password])  
 	    session[:user_id] = user.id  
-	    redirect_to root_url, :notice => "Erfolgreich eingeloggt!"  
+	    redirect_to root_url, :notice => t('session.messages.logged_in')
 	  else  
-	  	flash[:alert] = "Falsche Email oder Passwort!"  
+	  	flash[:alert] = t('session.messages.wrong_credentials')
 	    render "new"
 	  end  
 	end 
 
 	def destroy  
 	  session[:user_id] = nil  
-	  redirect_to login_path, :notice => "Erfolgreich ausgeloggt!"  
+	  redirect_to login_path, :notice => t('session.messages.logged_out')
 	end
 end

@@ -1,0 +1,26 @@
+<h1>
+	<%= t('invitation.here_you_can_add_someone') %>
+</h1>
+
+<% unless as_boolean(params[:existing]) %>
+	
+	<p><%= link_to t('invitation.existing_user'), new_invitation_path(:existing => true) %></p>
+	<%= simple_form_for @user do |f| %>  
+		  <%= f.input :account_owner, :as => :hidden, :input_html => { :value => false }  %>
+		  <%= f.input :admin, :as => :hidden, :input_html => { :value => false } %>
+	    <%= f.input :email %>  
+	    <%= f.input :password %>
+	    <%= f.input :password_confirmation %>  
+			<%= f.submit t('user.add') %>
+	<% end %>
+	
+<% else %>
+
+	<p><%= link_to t('invitation.non_existing_user'), new_invitation_path(:existing => false) %></p>
+	<%= simple_form_for @user do |f| %>  
+		  <%= f.input :account_owner, :as => :hidden, :input_html => { :value => false }  %>
+		  <%= f.input :admin, :as => :hidden, :input_html => { :value => false } %>
+	    <%= f.input :email, :collection => all_users_without_me_and_added, :prompt => t('invitation.choose_user') %>  
+			<%= f.submit t('invitation.add') %>
+	<% end %>
+<% end %>

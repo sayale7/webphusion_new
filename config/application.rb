@@ -39,5 +39,7 @@ module Webphusion
 
     # Enable the asset pipeline
     config.assets.enabled = true
+    
+    I18n.default_locale = :de
   end
 end

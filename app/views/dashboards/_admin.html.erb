@@ -1,0 +1,15 @@
+<h1><%= t('website.mine') %></h1>
+<p><%= link_to t('website.new'), new_website_path %></p>
+<ul>
+	<% current_user.account.websites.each do |website| %>
+		<li><b><%= link_to website.name, edit_website_path(website) %></b></li>
+	<% end %>
+</ul>
+
+<h1><%= t('theme.mine') %></h1>
+<p><%= link_to t('theme.new'), new_theme_path %></p>
+<ul>
+	<% current_user.account.themes.each do |theme| %>
+		<li><b><%= link_to theme.name, edit_theme_path(theme) %></b</li>
+	<% end %>
+</ul>

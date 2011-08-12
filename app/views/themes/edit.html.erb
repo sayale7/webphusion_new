@@ -1,0 +1,11 @@
+<h1><%= t('theme.edit') %></h1>
+
+<div class='simple_form'>
+	<%= simple_form_for @theme do |f| %> 
+			<%= f.error_notification %> 
+		  <%= f.input :account_id, :as => :hidden, :input_html => { :value => @theme.account.id }  %>
+	    <%= f.input :name %>  
+	    <%= f.input :public, :as => :boolean %>
+			<%= f.submit t('theme.update') %>
+<% end %>	
+</div>

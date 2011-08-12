@@ -1,8 +1,27 @@
 <h1>Meine Daten bearbeiten</h1>
+<p><%= link_to "Account loeschen", user_path(current_user.id), :method => :delete, :confirm => "Wollen Sie Ihren Account wirklich loeschen? Alle Daten werden damit geloescht!!!"%></p>
 
-<%= simple_form_for @user do |f| %>
-	<%= f.input :email %>
-  <%= f.input :password, :required => false %>
-  <%= f.input :password_confirmation %>  
-	<%= f.submit "Uebernehmen" %>
+<div class="simple_form">
+	<%= simple_form_for @user do |f| %>
+		<%= f.error_notification %>
+		<%= f.input :email %>
+	  <%= f.input :password, :required => false %>
+	  <%= f.input :password_confirmation %>  
+		<%= f.submit "Uebernehmen" %>
+	<% end %>
+</div>
+
+<% if current_user.account_owner %>
+	<div class="section">
+		<p>
+			<%= link_to 'Gastbenutzer hinzufuegen', new_invitation_path(:existing => false) %>
+		</p>
+		<p>
+			<ul>
+				<% current_user.account.guests.each do |user| %>
+					<li><b><%= user.email %></b> - <%= link_to 'Verbindung loesen', invitation_path(user), :method => :delete, :confirm => 'Verbindung wirklich loesen?' %></li>
+				<% end %>
+			</ul>
+		</p>
+	</div>
 <% end %>

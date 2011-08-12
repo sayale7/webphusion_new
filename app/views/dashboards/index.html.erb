@@ -1,0 +1,11 @@
+<% if current_user %>
+	<% unless current_user.account.nil? %>
+		<div id="own" class="left">
+			<%= render 'admin' %>
+		</div>
+	<% end %>
+	
+	<div id="guest" class="left">
+		<%= render 'guest' %>	
+	</div>
+<% end %>

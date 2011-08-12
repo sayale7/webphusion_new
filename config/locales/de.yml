@@ -1,0 +1,76 @@
+de:
+  nav:
+    home: 'Home'
+    edit_account: 'Meinen Account bearbeiten'
+    logout: 'Ausloggen'
+    login: 'Einloggen'
+    register: 'Registrieren'
+  website:
+    new: Neue Website anlegen
+    create: Website anlegen
+    mine: Meine Websites
+    other: Gastwebsites
+    edit: 'Bearbeiten'
+    update: 'Uebernehmen'
+    messages:
+      created: 'Website erfolgreich angelegt!'
+      updated: 'Website erfolgreich geaendert'
+      destroyed: 'Website wurde von Ihrem Account entfernt!'
+  theme:
+    new: Neues Thema anlegen
+    create: Thema anlegen
+    mine: Meine Themen
+    other: Gastthemen
+    edit: 'Bearbeiten'
+    update: 'Uebernehmen'
+    messages:
+      created: 'Thema erfolgreich angelegt!'
+      updated: 'Thema erfolgreich geaendert'
+      destroyed: 'Thema wurde von Ihrem Account entfernt!'
+  invitation:
+    here_you_can_add_someone: 'Hier kannst du jemanden einladen, mit der dir beim erstellen der Site hilft'
+    existing_user: 'Existierenden Benutzer hinzufuegen'
+    non_existing_user: 'Neuen Benutzer hinzufuegen'
+    add: 'Benutzer Hinzufuegen'
+    choose_user: 'Benutzer auswaehlen'
+    messages:
+      disconnected: 'Verbindung erfolgreich geloest!'
+  user:
+    add: 'Benutzer Hinzufuegen'
+    register: Registrieren
+    messages:
+      email_exists: Email ist bereits registriert
+      created: 'Account erfolgreich angelegt!'
+      updated: 'Daten erfolgreich gespeichert!'
+      destroyed: 'Ihr Account wurde erfolgreich geloescht!'
+      added_user_to_account: 'Benutzer wurde Ihrem Account erfolgreich hinzugefuegt!'
+      could_not_add_user_to_account: 'Benutzer konnte Ihrem Account leider nicht hinzugefuegt werden!'
+      dont_add_yourself: 'Sie koennen sich nicht selbst hinzufuegen!'
+      allready_added: 'Benutzer wurde Ihrem Account schon hinzugefuegt!'
+      password_and_confirmation_dont_match: "Passwort und Passwortbestaetigung stimmen nicht ueberein!"
+  session:
+    login: 'Einloggen'
+    messages:
+      logged_in: 'Erfolgreich eingeloggt!'
+      logged_out: 'Erfolgreich ausgeloggt!'  
+      wrong_credentials: 'Email oder Passwort Kombination stimmt nicht ueberein!'
+  mongoid:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: 'Email darf nicht leer sein!'
+              invalid: 'Geben Sie bitte eine gueltige Email Adresse ein'
+              taken: 'Email ist bereits bei uns registriert'
+            password:
+              blank: 'Passwort darf nicht leer sein!'
+              confirmation: 'Passwort und Passwortbestaetigung stimmen nicht ueberein!'
+        website:
+          attributes:
+            name:
+              blank: 'Name darf nicht leer sein!'
+        theme:
+          attributes:
+            name:
+              blank: 'Name darf nicht leer sein!'

@@ -7,20 +7,30 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<div id="nav">
-		<% if current_user%>
-		<ul>
-			<li><%= link_to "Logout", logout_path %></li>
-			<li><%= link_to "Meine Daten bearbeiten", edit_user_path(current_user) %></li>
-		<ul>
-		<% else %>
-		<%= link_to "Login", login_path %>
-		<% end %>
+	<div id="container">
+		<div id="nav">
+			<% if current_user%>
+			<ul>
+				<li><%= link_to t('nav.home'), root_path %></li>
+				<li><%= link_to t('nav.edit_account'), edit_user_path(current_user) %></li>
+				<li><%= link_to t('nav.logout'), logout_path %></li>
+			<ul>
+			<% else %>
+				<ul>
+					<li><%= link_to t('nav.login'), login_path %></li>
+					<li><%= link_to t('nav.register'), new_user_path %></li>
+				</ul>
+			<% end %>
+		</div>
+		<div id="content">
+			<div id="flash">
+				<% flash.each do |name, msg| %>
+			    <%= content_tag :div, msg, :id => "flash_#{name}" %>
+			  <% end %>
+		  </div>
+			<%= yield %>
+		</div>
 	</div>
-  <% flash.each do |name, msg| %>
-    <%= content_tag :div, msg, :id => "flash_#{name}" %>
-  <% end %>
-	<%= yield %>
 
 </body>
 </html>

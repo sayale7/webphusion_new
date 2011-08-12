@@ -2,10 +2,13 @@ development:
   host: localhost
   database: webphusion_development
   preload_models: true
+  allow_dynamic_fields: true
 
 test:
   host: localhost
   database: webphusion_test
+  preload_models: true
+  allow_dynamic_fields: true
 
 # set these environment variables on your prod server
 production:

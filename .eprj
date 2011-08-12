@@ -4,8 +4,38 @@
     <dict>
         <key>fileTriggers</key>
         <dict>
+            <key>account.rb</key>
+            <string>app\models\account.rb</string>
+            <key>application</key>
+            <string>app\views\layouts\application.html.erb</string>
+            <key>application.h</key>
+            <string>app\views\layouts\application.html.erb</string>
+            <key>application.ht</key>
+            <string>app\views\layouts\application.html.erb</string>
+            <key>application.r</key>
+            <string>config\application.rb</string>
+            <key>gemfile</key>
+            <string>Gemfile</string>
+            <key>guar</key>
+            <string>Guardfile</string>
+            <key>mongo</key>
+            <string>config\mongoid.yml</string>
+            <key>rou</key>
+            <string>config\routes.rb</string>
             <key>routes</key>
             <string>config\routes.rb</string>
+            <key>session</key>
+            <string>app\controllers\sessions_controller.rb</string>
+            <key>themes</key>
+            <string>app\controllers\themes_controller.rb</string>
+            <key>user.r</key>
+            <string>app\models\user.rb</string>
+            <key>user.rb</key>
+            <string>app\models\user.rb</string>
+            <key>users_con</key>
+            <string>app\controllers\users_controller.rb</string>
+            <key>websites_con</key>
+            <string>app\controllers\websites_controller.rb</string>
         </dict>
     </dict>
 </plist>

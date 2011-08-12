@@ -1,0 +1,9 @@
+<h1><%= t('website.edit') %></h1>
+
+<%= simple_form_for @website do |f| %>  
+		<%= f.error_notification %>
+	  <%= f.input :account_id, :as => :hidden, :input_html => { :value => @website.account.id }  %>
+    <%= f.input :name %>  
+		<%= f.submit t('website.update') %>
+<% end %>
+

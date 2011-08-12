@@ -1,0 +1,18 @@
+<h1><%= t('website.other') %></h1>
+
+<ul>
+	<% guest_accounts.each do |account| %>
+		<% account.websites.each do |website| %>
+			<li><b><%= link_to website.name, edit_website_path(website) %></b></li>
+		<% end %>
+	<% end %>
+</ul>
+
+<h1><%= t('theme.other') %></h1>
+<ul>
+	<% guest_accounts.each do |account| %>
+		<% account.themes.each do |theme| %>
+			<li><b><%= link_to theme.name, edit_theme_path(theme) %></b</li>
+		<% end %>
+	<% end %>
+</ul>
